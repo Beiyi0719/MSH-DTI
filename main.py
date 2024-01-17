@@ -13,7 +13,6 @@ import warnings
 import json
 def main():
 
-	device = 'cuda:0'
 	warnings.filterwarnings("ignore", category=RuntimeWarning)
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--epoch', default=1000, type=int)
@@ -95,10 +94,10 @@ def main():
 					print(' test metrics:', metrics)
 
 					print(f'AUPR: {max_aupr:.4f}  AUC:{max_auc:.4f}   ')
-					# 配置日志输出的格式和级别
-					logging.basicConfig(filename='result(2).log', level=logging.INFO,
+					# Configure the format and level of log output
+					logging.basicConfig(filename='result.log', level=logging.INFO,
 										format='%(asctime)s - %(levelname)s - %(message)s')
-					# 运行代码并将结果写入日志文件
+					# Run the code and write the results to a log file
 					result = ('args.lr=',args.lr,'i=',i,' test metrics:', metrics,f'\nAUPR: {max_aupr:.4f}  AUC:{max_auc:.4f}')
 					logging.info(f"运行结果: {result}")
 if __name__ == '__main__':
