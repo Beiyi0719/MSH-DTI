@@ -8,3 +8,5 @@ Python == 3.7
 
 Data sources:
 https://github.com/luoyunan/DTINet
+
+Both drug and target features are obtained from self supervised models
